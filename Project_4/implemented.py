@@ -25,7 +25,7 @@ user_dao = UserDAO(db.session)
 user_service = UserService(dao=user_dao)
 
 favorite_dao = FavoriteDAO(db.session)
-favorite_service = FavoriteService(favorite_dao)
+favorite_service = FavoriteService(favorite_dao, user_service)
 
 auth_service = AuthService(user_service)
 

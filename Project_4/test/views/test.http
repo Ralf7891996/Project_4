@@ -1,0 +1,53 @@
+POST http://127.0.0.1:8000/auth/register/
+Accept: 201
+Content-Type: application/json
+
+{
+  "email": "test@test",
+  "password": "123"
+}
+###
+POST http://127.0.0.1:8000/auth/login/
+Accept: token
+Content-Type: application/json
+
+{
+  "email": "test@test",
+  "password": "123"
+}
+###
+GET http://127.0.0.1:8000/movies
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdCIsImV4cCI6MTY3NTQzMDE5Mn0.5xsEAos57F7crUMEj146-esQQ_V8UCbOffVVGKmN9wg
+Accept: application/json
+
+###
+GET http://127.0.0.1:8000/movies/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdCIsImV4cCI6MTY3NTQzMDE5Mn0.5xsEAos57F7crUMEj146-esQQ_V8UCbOffVVGKmN9wg
+Accept: application/json
+
+###
+GET http://127.0.0.1:8000/movies/?status=new&page=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdCIsImV4cCI6MTY3NTQzMDE5Mn0.5xsEAos57F7crUMEj146-esQQ_V8UCbOffVVGKmN9wg
+Accept: application/json
+
+###
+GET http://127.0.0.1:8000/genres/?page=2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdCIsImV4cCI6MTY3NTQzMDE5Mn0.5xsEAos57F7crUMEj146-esQQ_V8UCbOffVVGKmN9wg
+Accept: application/json
+
+###
+GET http://127.0.0.1:8000/user/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdCIsImV4cCI6MTY3NTQzMDE5Mn0.5xsEAos57F7crUMEj146-esQQ_V8UCbOffVVGKmN9wg
+Accept: application/json
+
+###
+PUT http://127.0.0.1:8000/user/password/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdCIsImV4cCI6MTY3NTQzMDE5Mn0.5xsEAos57F7crUMEj146-esQQ_V8UCbOffVVGKmN9wg
+Accept: application/json
+Content-Type: application/json
+
+{"name": "test",
+  "password_1": "123",
+  "password_2": "12345",
+  "email": "test@test",
+  "surname": "test"}

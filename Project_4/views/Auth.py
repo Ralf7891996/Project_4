@@ -15,7 +15,7 @@ class AuthView(Resource):
         if None in [email, password]:
             return 400
         new_user = auth_service.create(data_request)
-        return "user_registered", 201 # {"location": f"/users/{new_user.id}"}
+        return "user_registered", 201
 
 
 @auth_ns.route('/login/')
